@@ -6,14 +6,16 @@ let empHrs = 0;
 let empWage = 0;
 
 let empCheck = Math.floor(Math.random() * 10) % 3;
-
-if (empCheck == IS_FULL_TIME)
-	empHrs = 8;
-else if (empCheck == IS_PART_TIME)
-	empHrs = 4;
-else
-	empHrs = 0;
-
+switch (empCheck){
+	case IS_FULL_TIME :
+		empHrs = 8;
+		break;
+	case IS_PART_TIME :
+		empHrs = 4;
+		break;
+	default:
+		empHrs = 0;
+}
 empWage = empHrs * EMP_RATE_PER_HOUR;
 
 console.log(empWage)
